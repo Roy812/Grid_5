@@ -1,0 +1,72 @@
+/*Maak hier jouw CSS!*/
+.container {
+    color: white;
+    background-color: darksalmon;
+    padding: 18px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 190px auto auto 50px;
+    gap: 5px 5px;
+    grid-template-areas: "header big-aside big-aside"
+                         "big-content big-aside big-aside"
+                         "big-content small-content small-aside"
+                         "big-content small-content dynamic"
+                         "footer footer footer" ;
+
+    /*"big-content big-aside" "small-content small-aside" "footer footer"*/
+
+
+}
+
+#head {
+    background-color: darksalmon;
+    grid-area: header;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: white solid 5px;
+}
+#bc {
+    background-color: darksalmon;
+    grid-area: big-content;
+    border: white solid 5px;
+}
+#ba {
+    background-color: darksalmon;
+    grid-area: big-aside;
+    border: white solid 5px;
+}
+#sa {
+    background-color: darksalmon;
+    grid-area: small-aside;
+    border: white solid 5px;
+}
+#sc {
+    background-color: darksalmon;
+    grid-area: small-content;
+    border: white solid 5px;
+}
+#foot {
+    background-color: darksalmon;
+    grid-area: footer;
+    border: white solid 5px;
+}
+#dynamic {
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 576px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px auto 200px 100px 50px 100px;
+        grid-template-areas: "header" "big-content" "big-aside" "small-content" "small-aside" "footer";
+
+    }
+}
